@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="results">
+      <br />
+      <a href="Index.html">Back to Home</a>
+      <script>
+        const results = document.getElementById("results");
+        const params = new URLSearchParams(window.location.search);
+
+        const name = params.get("name");
+        const tel = params.get("tel");
+        const message = params.get("description");
+
+        results.innerHTML = `
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Phone:</strong> ${tel}</p>
+    <p><strong>Message:</strong> ${message}</p>
+  `;
+      </script>
+    </div>
+  </body>
+</html>
